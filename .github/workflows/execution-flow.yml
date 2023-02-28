@@ -15,7 +15,7 @@ jobs:
       - name: Second step
         run: echo "Second Step"
   job02:
-    if: contains('hello world', 'llo')
+    if: !contains('hello world', 'llo')
     runs-on: ubuntu-latest
     steps:
       - name: Third step
