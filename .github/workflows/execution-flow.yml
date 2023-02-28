@@ -6,6 +6,7 @@ on:
       - labeled
       - synchronize
       - reopened
+      - unlabeled
 jobs:
   job01:
     runs-on: ubuntu-latest
