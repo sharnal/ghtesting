@@ -15,4 +15,4 @@ jobs:
       - name: Third step
         run: echo "Third Step"
       - name: Fourth step
-        run: echo "${{ github.event.label.name }}"
+        run: echo "${{ github }}"
