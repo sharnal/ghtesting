@@ -10,9 +10,10 @@ jobs:
       - name: Second step
         run: echo "Second Step"
   job02:
+    if: contains(github.events.pull_request.labels.*.name, 'hotfix')
     runs-on: ubuntu-latest
     steps:
       - name: Third step
         run: echo "Third Step"
       - name: Fourth step
-        run: echo "${{ github.event.pull_request.labels.*.name }}"
+        run: echo "${{ toJSON(github.event.pull_request.labels.*.name) }}"
