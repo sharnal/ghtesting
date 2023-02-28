@@ -10,7 +10,7 @@ jobs:
       - name: Second step
         run: echo "Second Step"
   job02:
-    if: contains(github.events.pull_request.labels.*.name, 'hotfix')
+    if: !contains(github.events.pull_request.labels.*.name, 'hotfix')
     runs-on: ubuntu-latest
     steps:
       - name: Third step
