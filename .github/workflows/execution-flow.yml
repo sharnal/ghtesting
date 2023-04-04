@@ -24,3 +24,4 @@ jobs:
         run: echo "Third Step"
       - name: Fourth step
         run: echo "${{ toJSON(github.event.pull_request.labels.*.name) }}"
+        if: ${{ false }}
