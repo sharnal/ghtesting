@@ -31,5 +31,8 @@ jobs:
       - name: SHOULD GET SKIPPED
         run: echo "Hopefully Skipped"
         if: ${{ !env.SKIP_LABEL_TRUE }}
+      - name: Setup Project
+        uses: actions/checkout@v3
+
 
 
