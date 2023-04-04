@@ -32,6 +32,13 @@ jobs:
       - name: SHOULD GET SKIPPED IF LABEL SET
         run: echo "Not Skipped"
         if: ${{ false == env.SKIP_LABEL_SET }} && {{ env.GITHUB_BRANCH_MAIN }}
+  job03:
+    if: |
+      !contains(github.event.pull_request.labels.*.name, 'skip_playground_tests')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Third step
+        run: echo "Third Step."
 
 
 
