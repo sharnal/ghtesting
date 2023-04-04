@@ -24,5 +24,5 @@ jobs:
       - name: Third step
         run: echo "Third Step"
       - name: Fourth step
-        run: echo $env.SKIP_LABEL_TRUE
+        run: echo "$SKIP_LABEL_TRUE"
         if: ${{ true }}
