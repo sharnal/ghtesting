@@ -33,6 +33,7 @@ jobs:
         if: ${{ !env.SKIP_LABEL_TRUE }}
       - name: Setup Project
         uses: actions/checkout@v3
+        if: ${{ !env.SKIP_LABEL_TRUE }}
 
 
 
