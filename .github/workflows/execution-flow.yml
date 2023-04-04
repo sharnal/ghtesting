@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Third step
-        run: echo "Third Step"
+        run: echo "Third Step."
       - name: Fourth step
         run: echo "$SKIP_LABEL_TRUE"
       - name: Fifth step
