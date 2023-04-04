@@ -19,17 +19,19 @@ jobs:
         if: ${{ false }}
   job02:
     env:
-      SKIP_LABEL_TRUE: ${{ contains(github.event.pull_request.labels.*.name, 'hotfix') && github.ref == 'main' }}
+      SKIP_LABEL_SET: ${{ contains(github.event.pull_request.labels.*.name, 'hotfix') }}
+      GITHUB_BRANCH_MAIN: ${{ github.ref == 'main' }}
     runs-on: ubuntu-latest
     steps:
       - name: Third step
         run: echo "Third Step."
       - name: Fourth step
-        run: echo "$SKIP_LABEL_TRUE"
+        run: echo "$SKIP_LABEL_SET"
       - name: Fifth step
         run: echo ${{github.ref}}
-      - name: SHOULD GET SKIPPED
-        run: echo "Hopefully Skipped"
-        if: ${{ !env.SKIP_LABEL_TRUE }}
+      - name: SHOULD GET SKIPPED IF LABEL SET
+        run: echo "Not Skipped"
+        if: ${{ !env.SKIP_LABEL_SET && env.GITHUB_BRANCH_MAIN }}
+
 
 
