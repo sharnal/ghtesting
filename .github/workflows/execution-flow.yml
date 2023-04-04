@@ -34,8 +34,7 @@ jobs:
         if: ${{ false == env.SKIP_LABEL_SET }} && {{ env.GITHUB_BRANCH_MAIN }}
   job03:
     if: |
-      !contains(github.event.pull_request.labels.*.name, 'hotfix') &&
-      github.ref == 'main'
+      !contains(github.event.pull_request.labels.*.name, 'hotfix')
     runs-on: ubuntu-latest
     steps:
       - name: Third step
