@@ -18,7 +18,7 @@ jobs:
         if: ${{ false }}
   job02:
     env:
-      SKIP_LABEL_TRUE: "!contains(github.event.pull_request.labels.*.name, 'hotfix')"
+      SKIP_LABEL_TRUE: ${{ !contains(github.event.pull_request.labels.*.name, 'hotfix' }}
     runs-on: ubuntu-latest
     steps:
       - name: Third step
