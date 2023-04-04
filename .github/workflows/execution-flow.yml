@@ -31,7 +31,7 @@ jobs:
         run: echo ${{github.ref}}
       - name: SHOULD GET SKIPPED IF LABEL SET
         run: echo "Not Skipped"
-        if: ${{ !env.SKIP_LABEL_SET && env.GITHUB_BRANCH_MAIN }}
+        if: ${{ !(env.SKIP_LABEL_SET) && env.GITHUB_BRANCH_MAIN }}
 
 
 
