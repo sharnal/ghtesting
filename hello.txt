@@ -2,4 +2,5 @@
 hello
 another sentence
 another day
-dummy text
+dummy text.
+
