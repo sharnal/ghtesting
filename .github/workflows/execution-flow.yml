@@ -1,6 +1,12 @@
 name: conditional pull request
 on:
-  pull_request
+  pull_request:
+    types:
+      - opened
+      - labeled
+      - synchronize
+      - reopened
+      - unlabeled
 jobs:
   job01:
     runs-on: ubuntu-latest
@@ -9,10 +15,17 @@ jobs:
         run: echo "First Step"
       - name: Second step
         run: echo "Second Step"
+        if: ${{ false }}
   job02:
+    env:
+      SKIP_LABEL_TRUE: ${{ !contains(github.event.pull_request.labels.*.name, 'hotfix') }}
     runs-on: ubuntu-latest
     steps:
       - name: Third step
         run: echo "Third Step"
       - name: Fourth step
-        run: echo "Fourth Step"
+        run: echo "$SKIP_LABEL_TRUE"
+      - name: Fifth step
+        run: echo ${{github.ref}}
+
+
