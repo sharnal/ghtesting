@@ -15,7 +15,7 @@ jobs:
         run: echo "First Step"
       - name: Second step
         run: echo "Second Step"
-        if: {{ false }}
+        if: ${{ false }}
   job02:
     if: "!contains(github.event.pull_request.labels.*.name, 'hotfix')"
     runs-on: ubuntu-latest
