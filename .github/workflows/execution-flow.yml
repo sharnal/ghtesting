@@ -25,4 +25,7 @@ jobs:
         run: echo "Third Step"
       - name: Fourth step
         run: echo "$SKIP_LABEL_TRUE"
-        if: ${{ true }}
+      - name: Fifth step
+        run: echo ${{github.ref}}
+
+
