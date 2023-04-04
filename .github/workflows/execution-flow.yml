@@ -28,5 +28,8 @@ jobs:
         run: echo "$SKIP_LABEL_TRUE"
       - name: Fifth step
         run: echo ${{github.ref}}
+      - name: SHOULD GET SKIPPED
+        run: echo "Hopefully Skipped"
+        if: ${{ !env.SKIP_LABEL_TRUE }}
 
 
