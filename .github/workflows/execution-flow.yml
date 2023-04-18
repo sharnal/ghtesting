@@ -2,11 +2,11 @@ name: conditional pull request
 on:
   pull_request:
     types:
-      - opened
-      - labeled
-      - synchronize
-      - reopened
-      - unlabeled
+#      - opened
+#      - labeled
+#      - synchronize
+#      - reopened
+#      - unlabeled
       - closed
 jobs:
   job01:
