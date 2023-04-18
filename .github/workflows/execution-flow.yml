@@ -40,6 +40,3 @@ jobs:
     steps:
       - name: Third step
         run: echo "Third Step."
-
-
-
