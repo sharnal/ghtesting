@@ -41,7 +41,6 @@ jobs:
       - name: Third step
         run: echo "Third Step."
   job04:
-    if: ${{ false }}
     needs:
       - job03
     runs-on: ubuntu-latest
