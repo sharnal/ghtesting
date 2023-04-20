@@ -44,7 +44,7 @@ jobs:
     needs:
       - job03
     if: |
-      always () &&
+      always()  &&
       contains(needs.*.result, 'skipped') || contains(needs.*.result, 'success') &&
       !contains(needs.*.result, 'failure')
     runs-on: ubuntu-latest
@@ -55,7 +55,7 @@ jobs:
     needs:
       - job04
     if: |
-      always () &&
+      always() &&
       contains(needs.job04.result, 'skipped') || contains(needs.job04.result, 'success') &&
       !contains(needs.job04.result, 'failure')
     runs-on: ubuntu-latest
