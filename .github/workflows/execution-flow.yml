@@ -43,6 +43,7 @@ jobs:
   job04:
     needs:
       - job03
+    if: ${{ contains(needs.*.result, 'skipped') || contains(needs.*.result, 'success' }}
     runs-on: ubuntu-latest
     steps:
       - name: Sixth Step
