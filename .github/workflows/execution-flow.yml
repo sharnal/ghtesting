@@ -46,7 +46,7 @@ jobs:
     if: |
       always () &&
       contains(needs.*.result, 'skipped') || contains(needs.*.result, 'success') &&
-      !contains(needs.*.result. 'failure')
+      !contains(needs.*.result, 'failure')
     runs-on: ubuntu-latest
     steps:
       - name: Sixth Step
