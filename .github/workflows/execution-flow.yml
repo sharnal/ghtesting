@@ -40,3 +40,17 @@ jobs:
     steps:
       - name: Third step
         run: echo "Third Step."
+  job04:
+    needs:
+      - job03
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sixth Step
+        run: echo "Sixth Step"
+  job05:
+    needs:
+      - job04
+    runs-on: ubuntu-latest
+    steps:
+      - name: Seventh Step
+        run: echo "Seventh Step"
