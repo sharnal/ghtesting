@@ -57,7 +57,7 @@ jobs:
     if: |
       always () &&
       contains(needs.job04.result, 'skipped') || contains(needs.job04.result, 'success') &&
-      !contains(needs.04.result, 'failure')
+      !contains(needs.job04.result, 'failure')
     runs-on: ubuntu-latest
     steps:
       - name: Seventh Step
