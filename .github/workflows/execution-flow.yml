@@ -50,7 +50,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Sixth Step
-        run: echo "Sixth Step"
+        run: echo "Sixth Step "
   job05:
     needs:
       - job04
