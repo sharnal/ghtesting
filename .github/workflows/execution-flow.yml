@@ -54,10 +54,10 @@ jobs:
   job05:
     needs:
       - job04
-    if: |
-      always() &&
-      contains(needs.job04.result, 'skipped') || contains(needs.job04.result, 'success') &&
-      !contains(needs.job04.result, 'failure')
+#    if: |
+#      always() &&
+#      contains(needs.job04.result, 'skipped') || contains(needs.job04.result, 'success') &&
+#      !contains(needs.job04.result, 'failure')
     runs-on: ubuntu-latest
     steps:
       - name: Seventh Step
